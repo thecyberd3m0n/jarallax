@@ -103,10 +103,10 @@ QUnit.module('options', function () {
         var options = $jarallax.jarallax.options;
 
         customOptions.disableParallax = "function () {\n" +
-            "                return disableParallaxRegexp.test(navigator.userAgent);\n" +
+            "                return disableParallaxRegexp.test(window.navigator.userAgent);\n" +
             "            }";
         customOptions.disableVideo = "function () {\n" +
-            "                return disableVideoRegexp.test(navigator.userAgent);\n" +
+            "                return disableVideoRegexp.test(window.navigator.userAgent);\n" +
             "            }";
         assert.deepEqual({
             type: options.type,

@@ -2,7 +2,7 @@ import domReady from 'lite-ready';
 import raf from 'rafl';
 import { window } from 'global';
 
-const isIE = navigator.userAgent.indexOf('MSIE ') > -1 || navigator.userAgent.indexOf('Trident/') > -1 || navigator.userAgent.indexOf('Edge/') > -1;
+const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigator.userAgent.indexOf('Trident/') > -1 || window.navigator.userAgent.indexOf('Edge/') > -1;
 
 const supportTransform = (() => {
     const prefixes = 'transform WebkitTransform MozTransform'.split(' ');
@@ -196,7 +196,7 @@ class Jarallax {
         }
         if (self.options.disableParallax instanceof RegExp) {
             const disableParallaxRegexp = self.options.disableParallax;
-            self.options.disableParallax = () => disableParallaxRegexp.test(navigator.userAgent);
+            self.options.disableParallax = () => disableParallaxRegexp.test(window.navigator.userAgent);
         }
         if (typeof self.options.disableParallax !== 'function') {
             self.options.disableParallax = () => false;
@@ -208,7 +208,7 @@ class Jarallax {
         }
         if (self.options.disableVideo instanceof RegExp) {
             const disableVideoRegexp = self.options.disableVideo;
-            self.options.disableVideo = () => disableVideoRegexp.test(navigator.userAgent);
+            self.options.disableVideo = () => disableVideoRegexp.test(window.navigator.userAgent);
         }
         if (typeof self.options.disableVideo !== 'function') {
             self.options.disableVideo = () => false;
@@ -234,7 +234,7 @@ class Jarallax {
             // position fixed is needed for the most of browsers because absolute position have glitches
             // on MacOS with smooth scroll there is a huge lags with absolute position - https://github.com/nk-o/jarallax/issues/75
             // on mobile devices better scrolled with absolute position
-            position: /iPad|iPhone|iPod|Android/.test(navigator.userAgent) ? 'absolute' : 'fixed',
+            position: /iPad|iPhone|iPod|Android/.test(window.navigator.userAgent) ? 'absolute' : 'fixed',
         };
 
         if (self.initImg() && self.canInitParallax()) {
