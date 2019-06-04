@@ -22,10 +22,10 @@
     },
     "repository": {
         "type": "git",
-        "url": "git://github.com/nk-o/jarallax.git"
+        "url": "git://github.com/thecyberd3m0n/jarallax.git"
     },
     "bugs": {
-        "url": "https://github.com/nk-o/jarallax/issues"
+        "url": "https://github.com/thecyberd3m0n/jarallax/issues"
     },
     "keywords": [
         "parallax",
